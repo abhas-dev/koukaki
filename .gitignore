@@ -1,0 +1,27 @@
+# Ignore les fichiers de build ou de dépendances (selon votre configuration)
+node_modules/
+vendor/
+
+# Ignore les fichiers de logs
+error_log
+access_log
+*.log
+
+# Ignore les fichiers temporaires
+*.tmp
+*.temp
+# Ignore les fichiers de sauvegarde automatique de l'éditeur
+*~
+
+# Ignore les fichiers de clés API (si elles sont stockées dans des fichiers)
+api-keys.json
+
+# Ignore les fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# Ignore les fichiers de paramètres spécifiques à l'IDE (par exemple, .idea/ pour PhpStorm)
+.idea/
+
+# Ignore les fichiers de paramètres spécifiques à l'éditeur (par exemple, .vscode/ pour Visual Studio Code)
+.vscode/
