@@ -1,3 +1,5 @@
+assets/media
+
 # Ignore les fichiers de build ou de dépendances (selon votre configuration)
 node_modules/
 vendor/

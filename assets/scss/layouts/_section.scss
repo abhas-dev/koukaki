@@ -1,0 +1,67 @@
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer ul::after,
+.site-footer::before {
+  @include rotateWithAnimation;
+}
+
+@keyframes flowerRotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nomination {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 66.66%;
+    min-height: 220px;
+    margin: auto;
+  }
+
+  &::before {
+    content: url("../../assets/media/images/Sunflower.png");
+    position: absolute;
+    left: 4em;
+    top: 0em;
+  }
+
+  &::after {
+    content: url("../../assets/media/images/orchid.png");
+    position: absolute;
+    right: -4em;
+    bottom: 7.8em;
+  }
+
+  &__title {
+    flex: 2;
+    background: url("../../assets/media/images/background-nomination.png") no-repeat center center;
+    background-size: cover;
+    padding: 10px;
+
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  &__img  {
+    flex: 1;
+    padding: 10px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+
+
+}

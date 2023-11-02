@@ -1,0 +1,108 @@
+.banner {
+  background-image: url("");
+  position: relative;
+}
+.banner video {
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.banner img {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: 6s infinite linear alternate floatingTitle;
+}
+@keyframes floatingTitle {
+  0%, 100% {
+    top: 58%;
+    left: 50%;
+  }
+  25% {
+    top: 60%;
+    left: 51%;
+  }
+  50% {
+    top: 56%;
+    left: 53%;
+  }
+  75% {
+    top: 54%;
+    left: 51%;
+  }
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: "";
+}
+.site-footer::after {
+  content: "";
+}
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer ul::after,
+.site-footer::before {
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+@keyframes flowerRotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.nomination {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+}
+.nomination .container {
+  display: flex;
+  justify-content: space-between;
+  width: 66.66%;
+  min-height: 220px;
+  margin: auto;
+}
+.nomination::before {
+  content: url("../../assets/media/images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+.nomination::after {
+  content: url("../../assets/media/images/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: 7.8em;
+}
+.nomination__title {
+  flex: 2;
+  background: url("../../assets/media/images/background-nomination.png") no-repeat center center;
+  background-size: cover;
+  padding: 10px;
+}
+.nomination__title h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+.nomination__img {
+  flex: 1;
+  padding: 10px;
+}
+.nomination__img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=main.css.map */

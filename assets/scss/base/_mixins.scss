@@ -1,0 +1,4 @@
+@mixin rotateWithAnimation {
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}

@@ -1,0 +1,40 @@
+.banner {
+  background-image: url("");
+  position: relative;
+
+  video {
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  img {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 6s infinite linear alternate floatingTitle;
+  }
+
+  @keyframes floatingTitle {
+    0%, 100% {
+      top: 58%;
+      left: 50%;
+    }
+
+    25% {
+      top: 60%;
+      left: 51%;
+    }
+
+    50% {
+      top: 56%;
+      left: 53%;
+    }
+
+    75% {
+      top: 54%;
+      left: 51%;
+    }
+  }
+}

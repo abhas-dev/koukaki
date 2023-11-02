@@ -1,0 +1,15 @@
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+  }
+
+  &::after {
+    content: "";
+  }
+}
