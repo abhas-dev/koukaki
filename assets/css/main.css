@@ -1,3 +1,25 @@
+@charset "UTF-8";
+#site-navigation {
+  display: flex;
+  align-items: center;
+}
+#site-navigation p {
+  margin: 0 auto;
+}
+#site-navigation #icons {
+  justify-content: flex-end;
+}
+#site-navigation #icons::before {
+  content: "☰";
+  font-size: 2rem;
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.active #icons:before {
+  content: "✕";
+}
+
 .banner {
   background-image: url("");
   position: relative;

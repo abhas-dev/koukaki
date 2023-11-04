@@ -1,0 +1,24 @@
+#site-navigation {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0 auto;
+  }
+
+  #icons {
+    justify-content: flex-end;
+
+    &::before {
+      content: "\2630";
+      font-size: 2rem;
+      margin-right: 60px;
+      cursor: pointer;
+    }
+  }
+}
+
+.active #icons:before {
+  content: "\2715";
+}
+

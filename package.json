@@ -8,6 +8,9 @@
     "start": "wp-scripts start",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

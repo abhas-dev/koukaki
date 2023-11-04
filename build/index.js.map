@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":";;;;;AAAA;;AAEAA,OAAO,CAACC,GAAG,CAAC,KAAK,CAAC,C","sources":["webpack://foce-child/./src/index.js"],"sourcesContent":["// alert('test alert');\r\n\r\nconsole.log('aaa');"],"names":["console","log"],"sourceRoot":""}
