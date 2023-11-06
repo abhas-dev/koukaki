@@ -7,6 +7,10 @@
   @include rotateWithAnimation;
 }
 
+.story h2::after {
+  transform-origin: 77px 77px;
+}
+
 @keyframes flowerRotation {
   100% {
     transform: rotate(360deg);

@@ -1,9 +1,13 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_assets' );
 function theme_enqueue_assets() {
-	wp_enqueue_script('child-script', get_theme_file_uri('/build/index.js'), NULL, '1.0', $args = ['strategy' => 'defer', 'in_footer' => true]);
+	// Stylesheets
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/main.css');
+	wp_enqueue_style( 'build-style', get_theme_file_uri('/build/index.css'));
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/main.css');
+
+	// Scripts
+	wp_enqueue_script('child-script', get_theme_file_uri('/build/index.js'), NULL, '1.0', $args = ['strategy' => 'defer', 'in_footer' => true]);
 }
 
 // Get customizer options form parent theme

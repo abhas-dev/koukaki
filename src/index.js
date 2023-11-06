@@ -1,3 +1,1 @@
-// alert('test alert');
-
-console.log('aaa');
+import './slider.js';

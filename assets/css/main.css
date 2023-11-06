@@ -20,6 +20,68 @@
   content: "✕";
 }
 
+.story #characters {
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+}
+.story #characters .swiper-container {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden !important;
+}
+.story #characters .swiper-slide {
+  width: auto !important;
+  overflow: hidden;
+}
+.story #characters .swiper-slide figure {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+.story #characters .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+.story #characters .swiper-slide, .story #characters .swiper-slide > * {
+  background: transparent none !important;
+}
+@media (max-width: 320px) {
+  .story #characters .swiper-slide {
+    width: calc(100% - 20px) !important;
+  }
+}
+.story #characters h3 {
+  background-position: left;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .story #characters h3 {
+    background-position: center;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .story #characters h3 {
+    padding-left: 3.75rem;
+  }
+}
+@media (max-width: 427px) {
+  .story #characters h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 342px) {
+  .story #characters h3 {
+    font-size: 1.75rem;
+  }
+}
+.story #characters div {
+  flex: none;
+  flex-shrink: 0;
+}
+
 .banner {
   background-image: url("");
   position: relative;
@@ -77,6 +139,10 @@
 .site-footer::before {
   transform: rotate(0deg);
   animation: flowerRotation 10s infinite linear;
+}
+
+.story h2::after {
+  transform-origin: 77px 77px;
 }
 
 @keyframes flowerRotation {
