@@ -1,23 +1,218 @@
 @charset "UTF-8";
+@keyframes flowerRotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes floatingTitle {
+  0%, 100% {
+    top: 58%;
+    left: 50%;
+  }
+  25% {
+    top: 60%;
+    left: 51%;
+  }
+  50% {
+    top: 56%;
+    left: 53%;
+  }
+  75% {
+    top: 54%;
+    left: 51%;
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translate(5px, 10px);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+  75% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #site-navigation {
   display: flex;
-  align-items: center;
-}
-#site-navigation p {
-  margin: 0 auto;
-}
-#site-navigation #icons {
-  justify-content: flex-end;
-}
-#site-navigation #icons::before {
-  content: "☰";
-  font-size: 2rem;
-  margin-right: 60px;
-  cursor: pointer;
+  justify-content: center;
 }
 
-.active #icons:before {
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 500;
+}
+.main-navigation p {
+  margin: 0 auto;
+}
+.main-navigation #toggler::before {
+  content: "☰";
+  position: absolute;
+  right: 60px;
+  top: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.main-navigation #toggler.menu-open::before {
   content: "✕";
+}
+
+.fullscreen-menu {
+  display: none;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  text-align: center;
+  background: #FFF5E9;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 100%;
+  height: calc(100vh - 80px);
+  transition: top 0.7s ease-in-out;
+}
+.fullscreen-menu .wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  overflow: hidden;
+}
+.fullscreen-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6vh;
+  margin: 0;
+  padding: 0;
+}
+.fullscreen-menu ul li a {
+  font-size: 3vw;
+  text-decoration: none;
+}
+.fullscreen-menu ul li a:hover {
+  text-shadow: 0 0 14px #FF5C00;
+}
+.fullscreen-menu ul li a:visited {
+  color: #000;
+}
+.fullscreen-menu.menu-open {
+  display: flex;
+  top: 80px;
+}
+
+/* Background Images */
+.fullscreen-menu p {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 10%;
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  top: 8%;
+}
+
+.rdm-flower {
+  position: absolute;
+  top: 40%;
+  right: -2%;
+  width: 5%;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+.hibiscus {
+  position: absolute;
+  width: 30%;
+  bottom: -17%;
+  right: -15%;
+  filter: blur(4px);
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+.orchid {
+  position: absolute;
+  top: 7%;
+  left: -4%;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+.flower {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 5%;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+.sun-flower {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
+}
+
+.yellow-cat {
+  position: absolute;
+  width: 5%;
+  bottom: 20%;
+  left: 4%;
+  animation: 5s infinite linear alternate floating;
+  animation-duration: 4s;
+}
+
+.dark-cat {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 7%;
+  animation: 5s infinite linear alternate floating;
+}
+
+.cat {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+  animation: 5s infinite linear alternate floating;
+  animation-duration: 5s;
 }
 
 .story #characters {
@@ -83,38 +278,48 @@
 }
 
 .banner {
-  background-image: url("");
   position: relative;
+  background-image: url("");
 }
 .banner video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: -1;
+  animation: fadeInDown 2s ease-out;
 }
-.banner img {
+@media screen and (max-width: 768px) {
+  .banner video {
+    display: none;
+  }
+}
+.banner .banner-logo {
   position: absolute;
-  top: 58%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: 6s infinite linear alternate floatingTitle;
+  transform: translate(-50%, calc(-50% - 80px));
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  animation: fadeInUp 2s ease-out;
+  animation: 6s infinite 1s linear alternate floatingTitle;
 }
-@keyframes floatingTitle {
-  0%, 100% {
-    top: 58%;
+@media screen and (max-width: 768px) {
+  .banner .banner-logo {
+    top: 25%;
     left: 50%;
+    animation: none;
   }
-  25% {
-    top: 60%;
-    left: 51%;
-  }
-  50% {
-    top: 56%;
-    left: 53%;
-  }
-  75% {
-    top: 54%;
-    left: 51%;
-  }
+}
+.banner .banner-img {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
 .site-footer {
@@ -131,6 +336,17 @@
   content: "";
 }
 
+#story, #studio {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#story.show, #studio.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -145,52 +361,41 @@
   transform-origin: 77px 77px;
 }
 
-@keyframes flowerRotation {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .nomination {
-  width: 100%;
-  padding: 60px 0;
   position: relative;
+  overflow-x: hidden;
+  padding: 60px 0;
 }
-.nomination .container {
+.nomination article {
   display: flex;
-  justify-content: space-between;
-  width: 66.66%;
-  min-height: 220px;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.nomination p {
+  font-family: "quicksand", sans-serif;
+  color: #FFF5E9;
+  font-size: 2rem;
+  height: auto;
+  background: url("../../assets/media/images/background-nomination.png") no-repeat;
+  background-size: contain;
+  max-width: 640px;
+  padding: 2em 2.5em;
 }
 .nomination::before {
   content: url("../../assets/media/images/Sunflower.png");
   position: absolute;
-  left: 4em;
-  top: 0em;
+  left: 8em;
+  top: 0;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
 }
 .nomination::after {
   content: url("../../assets/media/images/orchid.png");
   position: absolute;
   right: -4em;
-  bottom: 7.8em;
-}
-.nomination__title {
-  flex: 2;
-  background: url("../../assets/media/images/background-nomination.png") no-repeat center center;
-  background-size: cover;
-  padding: 10px;
-}
-.nomination__title h3 {
-  font-size: 2rem;
-  text-align: center;
-}
-.nomination__img {
-  flex: 1;
-  padding: 10px;
-}
-.nomination__img img {
-  width: 100%;
-  object-fit: cover;
+  top: 0;
+  transform: rotate(0deg);
+  animation: flowerRotation 10s infinite linear;
 }
 
 /*# sourceMappingURL=main.css.map */

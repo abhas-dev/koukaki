@@ -1,24 +1,173 @@
+// Le fullscreen menu doit s'afficher sous le site-header
+
 #site-navigation {
   display: flex;
+  justify-content: center;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 500;
 
   p {
     margin: 0 auto;
   }
 
-  #icons {
-    justify-content: flex-end;
+  #toggler {
 
     &::before {
       content: "\2630";
+      position: absolute;
+      right: 60px;
+      top: 20px;
       font-size: 2rem;
-      margin-right: 60px;
       cursor: pointer;
+    }
+
+    &.menu-open::before {
+      content: "\2715";
     }
   }
 }
 
-.active #icons:before {
-  content: "\2715";
+.fullscreen-menu {
+  display: none;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  //transform: translate(-50%, -50%);
+  text-align: center;
+  background: #FFF5E9;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 100%;
+  height: calc(100vh - 80px);
+  transition: top 0.7s ease-in-out;
+  //opacity: 0;
+  //transition: opacity 0.5s ease;
+  //animation: fadeIn 0.5s forwards;
+
+  .wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    overflow: hidden;
+    //opacity: 0;
+    //transition: opacity 0.5s ease;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      font-size: 3vw;
+      text-decoration: none;
+      //animation: fadeInRight .5s ease forwards;
+      //animation-delay: .35s;
+    }
+
+    li a:hover {
+      text-shadow: 0 0 14px #FF5C00;
+    }
+
+    li a:visited {
+      color: #000;
+    }
+  }
+
+  &.menu-open {
+    display: flex;
+    top: 80px;
+  }
 }
 
+/* Background Images */
+
+.fullscreen-menu p {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 10%;
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  top: 8%
+}
+
+.rdm-flower {
+  position: absolute;
+  top: 40%;
+  right: -2%;
+  width: 5%;
+  @include rotateWithAnimation;
+}
+
+.hibiscus {
+  position: absolute;
+  width: 30%;
+  bottom: -17%;
+  right: -15%;
+  filter: blur(4px);
+  @include rotateWithAnimation;
+}
+
+.orchid {
+  position: absolute;
+  top: 7%;
+  left: -4%;
+  @include rotateWithAnimation;
+}
+
+.flower {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 5%;
+  @include rotateWithAnimation;
+}
+
+.sun-flower {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  @include rotateWithAnimation;
+}
+
+.yellow-cat {
+  position: absolute;
+  width: 5%;
+  bottom: 20%;
+  left: 4%;
+  @include floating;
+  animation-duration: 4s;
+}
+
+.dark-cat {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 7%;
+  @include floating;
+}
+
+.cat {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+  @include floating;
+  animation-duration: 5s;
+}

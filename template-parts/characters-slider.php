@@ -1,35 +1,26 @@
 <?php
-if (!empty($characters)) {
-	foreach ($characters as $character) {
-		echo "<div class='swiper'>";
-        echo "<div class='swiper-wrapper'>";
-        echo "<div class='swiper-slide'>Slide 1</div>";
-        echo "</div>";
-        echo "</div>";
+$characters_query = get_characters_query();
 
-		echo '<figure>';
-		echo get_the_post_thumbnail($character['ID'], 'full');
-		echo '<figcaption>' . $character['title'] . '</figcaption>';
-		echo '</figure>';
-	}
-}
-?>
+if ($characters_query->have_posts()):
+echo '<article id="characters">';
+    echo '<div class="characters">';
+        echo '<h3>Les personnages</h3>';
+        echo '<div class="swiper swiper-characters">';
+            echo '<div class="swiper-wrapper">';
 
+                while ($characters_query->have_posts()) :
+                $characters_query->the_post();
+                echo '<div class="swiper-slide">';
+                    echo '<figure>';
+                        echo get_the_post_thumbnail(get_the_ID(), 'full');
+                        echo '<figcaption>';
+                            the_title();
+                            echo '</figcaption>';
+                        echo '</figure>';
+                    echo '</div>';
+                endwhile;
 
-<div class="swiper charactersSwiper">
-	<div class="swiper-wrapper">
-		<?php
-		if (!empty($characters)) :
-			foreach ($characters as $character) : ?>
-				<div class="swiper-slide">
-					<figure>
-						<?= get_the_post_thumbnail($character['ID'], 'full'); ?>
-						<figcaption><?= $character['title'] ?></figcaption>
-					</figure>
-				</div>
-			<?php
-			endforeach;
-		endif;
-		?>
-	</div>
-</div>
+                echo '</div></div></div></article>';
+
+wp_reset_postdata();
+endif;

@@ -1,40 +1,49 @@
 .banner {
-  background-image: url("");
+  //background-image: url("../media/images/banner.png") no-repeat cover center;
   position: relative;
+  background-image: url("");
 
   video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: -1;
+    animation: fadeInDown 2s ease-out;
+    
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
-  img {
+  .banner-logo {
     position: absolute;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: 6s infinite linear alternate floatingTitle;
-  }
+    transform: translate(-50%, calc(-50% - 80px));
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    animation: fadeInUp 2s ease-out;
+    @include floatingTitle;
 
-  @keyframes floatingTitle {
-    0%, 100% {
-      top: 58%;
+    @media screen and (max-width: 768px) {
+      top: 25%;
       left: 50%;
+      animation: none;
     }
 
-    25% {
-      top: 60%;
-      left: 51%;
-    }
-
-    50% {
-      top: 56%;
-      left: 53%;
-    }
-
-    75% {
-      top: 54%;
-      left: 51%;
-    }
   }
+
+  .banner-img {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+
 }

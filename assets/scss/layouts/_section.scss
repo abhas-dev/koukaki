@@ -1,3 +1,16 @@
+// Fade in on sections
+#story, #studio {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#story.show, #studio.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+// Rotation on flowers
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -11,62 +24,41 @@
   transform-origin: 77px 77px;
 }
 
-@keyframes flowerRotation {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .nomination {
-  width: 100%;
-  padding: 60px 0;
   position: relative;
+  overflow-x: hidden;
+  padding: 60px 0;
 
-  .container {
+  article {
     display: flex;
-    justify-content: space-between;
-    width: 66.66%;
-    min-height: 220px;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    font-family: 'quicksand', sans-serif;
+    color: #FFF5E9;
+    font-size: 2rem;
+    height: auto;
+    background: url("../../assets/media/images/background-nomination.png") no-repeat;
+    background-size: contain;
+    max-width: 640px;
+    padding: 2em 2.5em;
   }
 
   &::before {
     content: url("../../assets/media/images/Sunflower.png");
     position: absolute;
-    left: 4em;
-    top: 0em;
-  }
+    left: 8em;
+    top: 0;
+        @include rotateWithAnimation;
+      }
 
-  &::after {
-    content: url("../../assets/media/images/orchid.png");
-    position: absolute;
-    right: -4em;
-    bottom: 7.8em;
-  }
-
-  &__title {
-    flex: 2;
-    background: url("../../assets/media/images/background-nomination.png") no-repeat center center;
-    background-size: cover;
-    padding: 10px;
-
-    h3 {
-      font-size: 2rem;
-      //font-size: calc(0.5rem + 1vw);
-      text-align: center;
-    }
-  }
-
-  &__img  {
-    flex: 1;
-    padding: 10px;
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-
-
+      &::after {
+        content: url("../../assets/media/images/orchid.png");
+        position: absolute;
+        right: -4em;
+        top: 0;
+        @include rotateWithAnimation;
+      }
 }

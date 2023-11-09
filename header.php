@@ -25,11 +25,35 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<nav id="site-navigation" class="main-navigation active">
+    <header id="masthead" class="site-header">
+        <div id="site-navigation" class="main-navigation">
             <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+            <div id="toggler"  class="burger-toggler" aria-controls="primary-menu" aria-expanded="false"></div>
+        </div>
 
-            <div id="icons"  aria-controls="primary-menu" aria-expanded="false"></div>
+        <div id="overlay-full-screen" class="fullscreen-menu under-header">
+            <div class="wrapper">
+                <nav class="overlay-menu">
+                    <ul>
+                        <li><a href="#story">Histoire</a></li>
+                        <li><a href="#characters">Personnages</a></li>
+                        <li><a href="#place">Lieu</a></li>
+                        <li><a href="#studio">Studio Koukaki</a></li>
+                    </ul>
+                </nav>
 
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                <img class="logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/logo-menu.png'; ?> "alt="logo Fleurs d'oranger & chats errants">
+                <img class="rdm-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/random_flower.png'; ?> "alt="">
+                <img class="sun-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Sunflower.png'; ?> " alt="">
+                <img class="orchid" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/orchid.png'; ?> " alt="">
+                <img class="flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/flower.png'; ?> " alt="">
+                <img class="hibiscus" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Hibiscus.png'; ?> " alt="">
+                <img class="yellow-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/yellow-cat.png'; ?> " alt="">
+                <img class="dark-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/dark-cat.png'; ?> " alt="">
+                <img class="cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/cat.png'; ?> "alt="">
+
+                <p>studio koukaki</p>
+            </div>
+
+        </div>
+    </header>
