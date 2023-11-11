@@ -1,7 +1,15 @@
 .banner {
   //background-image: url("../media/images/banner.png") no-repeat cover center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("");
+
+  @media screen and (max-width: 620px) {
+    height: 350px;
+    min-height: auto;
+  }
 
   video {
     position: absolute;
@@ -19,17 +27,16 @@
   }
 
   .banner-logo {
-    position: absolute;
-    transform: translate(-50%, calc(-50% - 80px));
-    margin: 0;
-    padding: 0;
+    //position: absolute;
+    //transform: translate(-50%, calc(-50% - 80px));
+    //margin: 0;
+    //padding: 0;
     z-index: 10;
     animation: fadeInUp 2s ease-out;
+    animation-fill-mode: both;
     @include floatingTitle;
 
     @media screen and (max-width: 768px) {
-      top: 25%;
-      left: 50%;
       animation: none;
     }
 
@@ -43,6 +50,12 @@
     width: 100%;
     object-fit: cover;
     z-index: -2;
+    animation: fadeInDown 2s ease-out;
+
+    @media screen and (max-width: 768px) {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
 

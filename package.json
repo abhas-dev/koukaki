@@ -20,6 +20,7 @@
     "@wordpress/scripts": "^26.15.0"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "swiper": "^11.0.3"
   }
 }

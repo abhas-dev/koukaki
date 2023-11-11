@@ -4,6 +4,7 @@ function theme_enqueue_assets() {
 	// Stylesheets
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'build-style', get_theme_file_uri('/build/index.css'));
+	wp_enqueue_style( 'animatecss', get_theme_file_uri('/node_modules/animate.css/animate.min.css'));
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/main.css');
 
 	// Scripts

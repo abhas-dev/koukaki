@@ -31,14 +31,14 @@
             <div id="toggler"  class="burger-toggler" aria-controls="primary-menu" aria-expanded="false"></div>
         </div>
 
-        <div id="overlay-full-screen" class="fullscreen-menu under-header">
+        <div id="overlay-full-screen" class="fullscreen-menu under-header animate__animated animate__fadeInDown">
             <div class="wrapper">
                 <nav class="overlay-menu">
                     <ul>
                         <li><a href="#story">Histoire</a></li>
-                        <li><a href="#characters">Personnages</a></li>
+                        <li><a href="#character-anchor">Personnages</a></li>
                         <li><a href="#place">Lieu</a></li>
-                        <li><a href="#studio">Studio Koukaki</a></li>
+                        <li><a href="#studio-anchor">Studio Koukaki</a></li>
                     </ul>
                 </nav>
 

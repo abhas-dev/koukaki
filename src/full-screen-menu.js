@@ -1,36 +1,38 @@
 const burgerButton = document.getElementById("toggler");
 const overlayMenu = document.getElementById("overlay-full-screen");
 const menuLinks = document.querySelectorAll("#overlay-full-screen a");
+const animationDelay = 500;
 
-// burgerButton.addEventListener("click", () => {
-//     burgerButton.classList.toggle("menu-open");
-//     overlayMenu.classList.toggle("menu-open");
-//     overlayMenu.style.display === 'none' ? overlayMenu.style.animation = 'fadeIn 0.5s forwards' : overlayMenu.style.animation = 'fadeOut 0.5s forwards';
-//
-// });
-burgerButton.addEventListener("click", () => {
-    burgerButton.classList.toggle("menu-open");
-    overlayMenu.classList.toggle("menu-open");
-
-    // Utilisez un délai pour permettre à la transition de s'activer
+function addAnimationClass(element, animationClass, duration) {
+    element.classList.add(animationClass);
     setTimeout(() => {
-        overlayMenu.classList.toggle("fade-in");
-    }, 0.3);
+        element.classList.remove(animationClass);
+    }, duration);
+}
+
+function openMenu() {
+    if (!overlayMenu.classList.contains('animate__fadeInDown')) {
+        addAnimationClass(overlayMenu, 'animate__fadeInDown', animationDelay);
+    }
+    burgerButton.classList.add("menu-open");
+    overlayMenu.classList.add("menu-open");
+}
+
+function closeMenu() {
+    burgerButton.classList.remove("menu-open");
+    overlayMenu.classList.remove("menu-open");
+    addAnimationClass(overlayMenu, 'animate__fadeOutUp', animationDelay);
+}
+
+burgerButton.addEventListener("click", () => {
+    if (overlayMenu.classList.contains("menu-open")) {
+        addAnimationClass(overlayMenu, 'animate__fadeOutUp', 300);
+        setTimeout(closeMenu, 300);
+    } else {
+        openMenu();
+    }
 });
 
 menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        burgerButton.classList.remove("menu-open");
-        overlayMenu.classList.remove("menu-open");
-        overlayMenu.classList.remove("fade-in");
-    });
-});
-
-
-
-menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        burgerButton.classList.remove("menu-open");
-        overlayMenu.classList.remove("menu-open");
-    });
+    link.addEventListener("click", closeMenu);
 });

@@ -2,6 +2,7 @@
 $characters_query = get_characters_query();
 
 if ($characters_query->have_posts()):
+	echo "<span id='character-anchor'></span>";
 echo '<article id="characters">';
     echo '<div class="characters">';
         echo '<h3>Les personnages</h3>';

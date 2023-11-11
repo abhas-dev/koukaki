@@ -8,6 +8,10 @@
 #story.show, #studio.show {
   transform: translateY(0);
   opacity: 1;
+ }
+
+#studio {
+  overflow: hidden;
 }
 
 // Rotation on flowers
@@ -23,6 +27,7 @@
 .story h2::after {
   transform-origin: 77px 77px;
 }
+
 
 .nomination {
   position: relative;
@@ -62,3 +67,23 @@
         @include rotateWithAnimation;
       }
 }
+
+.show h2 {
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    animation: 2s 0s 1 both fadeInTitle;
+
+    &:first-child {
+      animation-delay: 0.5s;
+    }
+
+    &:last-child {
+      animation-delay: 1s;
+    }
+  }
+
+
+}
+
