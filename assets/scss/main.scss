@@ -10,3 +10,13 @@
 @import 'layouts/footer';
 @import 'layouts/section';
 
+body::after {
+  //content: '';
+  //height: 2px;
+  //position: fixed;
+  //top: calc(50% - 1px);
+  //left: 0;
+  //right: 0;
+  //z-index: 10;
+  //background-color: red;
+}

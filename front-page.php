@@ -36,7 +36,9 @@ get_header();
 
             <?php get_template_part('template-parts/characters-slider'); ?>
 
-            <article id="place">
+            <article id="place" class="parallax-container">
+                <div class="clouds little-cloud"></div>
+                <div class="clouds big-cloud"></div>
                 <div>
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>

@@ -74,3 +74,21 @@
     transform: translateY(0);
   }
 }
+
+@keyframes littleCloudTranslation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes bigCloudTranslation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200px);
+  }
+}
