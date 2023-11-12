@@ -43,14 +43,14 @@
                 </nav>
 
                 <img class="logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/logo-menu.png'; ?> "alt="logo Fleurs d'oranger & chats errants">
-                <img class="rdm-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/random_flower.png'; ?> "alt="">
-                <img class="sun-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Sunflower.png'; ?> " alt="">
-                <img class="orchid" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/orchid.png'; ?> " alt="">
-                <img class="flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/flower.png'; ?> " alt="">
-                <img class="hibiscus" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Hibiscus.png'; ?> " alt="">
-                <img class="yellow-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/yellow-cat.png'; ?> " alt="">
-                <img class="dark-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/dark-cat.png'; ?> " alt="">
-                <img class="cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/cat.png'; ?> "alt="">
+                <img class="orchid" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/orchid.png'; ?> ">
+                <img class="flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/flower.png'; ?> ">
+                <img class="random-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/random_flower.png';?> ">
+                <img class="sun-flower" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Sunflower.png'; ?> ">
+                <img class="hibiscus" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/Hibiscus.png'; ?> ">
+                <img class="cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/cat.png'; ?> ">
+                <img class="yellow-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/yellow-cat.png'; ?> ">
+                <img class="dark-cat" src="<?php echo get_stylesheet_directory_uri() . '/assets/media/images/dark-cat.png'; ?> ">
 
                 <p>studio koukaki</p>
             </div>
